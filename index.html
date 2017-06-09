@@ -1,27 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <script>
+    <!-- Header -->
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+    <header class="header">
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
+      <h1 class="logo">
+        <a href="index.html">Twittler</a>
+      </h1>
 
-      });
+      <a class="btn-feed" href="FILL OUT LATER">Update Feed</a>>
 
-    </script>
+    </header>
+
+    <!-- Feed -->
+
+
+    <div class="feed">
+      <script>
+        $(document).ready(function(){
+          var $body = $('body');
+          //$body.html('');
+          var index = streams.home.length - 1;
+          while(index >= 0){
+            var tweet = streams.home[index];
+            var $tweet = $('<div></div>');
+            $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            $tweet.appendTo($body);
+            index -= 1;
+          }
+        });
+      </script>
+    </div>
+    
+
   </body>
 </html>
