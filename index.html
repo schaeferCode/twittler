@@ -25,12 +25,54 @@
           index -= 1;
         }
       }
+
+      function filterTweets (user1, user2, user3) {
+        user1.remove();
+        user2.remove();
+        user3.remove();
+        $('#newTweets').text('BACK');
+        $('#newTweets').on('click', function () {
+          $('#newTweets').text('GET NEW TWEETS');
+          $('.container').html('');
+          newTweets();
+          $('.shawndrost-link').on('click', function () {
+            filterTweets($('.sharksforcheap'), $('.mracus'), $('.douglascalhoun'));
+            })
+          $('.sharksforcheap-link').on('click', function() {
+            filterTweets($('.shawndrost'), $('.mracus'), $('.douglascalhoun'));
+            })
+          $('.mracus-link').on('click', function() {
+            filterTweets($('.shawndrost'), $('.sharksforcheap'), $('.douglascalhoun'));
+            })
+          $('.douglascalhoun-link').on('click', function() {
+            filterTweets($('.shawndrost'), $('.sharksforcheap'), $('.mracus'));
+            })
+          });
+      }
+
       $(document).ready(function(){
+
         newTweets();
+
         $('#newTweets').on('click', function() {
           newTweets();
         })
+
+        $('.shawndrost-link').on('click', function () {
+          filterTweets($('.sharksforcheap'), $('.mracus'), $('.douglascalhoun'));
+          })
+        $('.sharksforcheap-link').on('click', function() {
+          filterTweets($('.shawndrost'), $('.mracus'), $('.douglascalhoun'));
+          })
+        $('.mracus-link').on('click', function() {
+          filterTweets($('.shawndrost'), $('.sharksforcheap'), $('.douglascalhoun'));
+          })
+        $('.douglascalhoun-link').on('click', function() {
+          filterTweets($('.shawndrost'), $('.sharksforcheap'), $('.mracus'));
+          })
+
       });
+
     </script>
     <h1>Twittler</h1>
     <button id='newTweets'>GET NEW TWEETS</button>
