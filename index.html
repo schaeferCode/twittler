@@ -7,38 +7,24 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <!-- Header -->
-
-    <header class="header">
-
-      <h1 class="logo">
-        <a href="index.html">Twittler</a>
-      </h1>
-
-      <a class="btn-feed" href="FILL OUT LATER">Update Feed</a>>
-
-    </header>
-
-    <!-- Feed -->
-
-
-    <div class="feed">
-      <script>
-        $(document).ready(function(){
-          var $body = $('body');
-          //$body.html('');
-          var index = streams.home.length - 1;
-          while(index >= 0){
-            var tweet = streams.home[index];
-            var $tweet = $('<div></div>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message);
-            $tweet.appendTo($body);
-            index -= 1;
-          }
-        });
-      </script>
+    <script>
+      $(document).ready(function(){
+        var $feed = $('.container');
+        $feed.html('');
+        var index = streams.home.length - 1;
+        while(index >= 0){
+          var tweet = streams.home[index];
+          var $tweet = $('<div class=' + tweet.user + '></div>');
+          $tweet.text('@<h1>' + tweet.user + '</h1>: ' + tweet.message);
+          $tweet.appendTo($feed);
+          index -= 1;
+        }
+        $('')
+      });
+    </script>
+    <h1>Twittler</h1>
+    <button>FUCK IT</button>
+    <div class="container">
     </div>
-    
-
   </body>
 </html>
