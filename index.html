@@ -8,22 +8,32 @@
   </head>
   <body>
     <script>
-      $(document).ready(function(){
+      // poulate initial tweet
+        // add class to each new tweet which is the user - class = 'user'
+        // add link to each tweet which is the username - class = 'user-link'
+      // Add button to get more tweets
+
+      function newTweets () {
         var $feed = $('.container');
         $feed.html('');
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<div class=' + tweet.user + '></div>');
-          $tweet.text('@<h1>' + tweet.user + '</h1>: ' + tweet.message);
+          $tweet.html('<p><button><a class=' + tweet.user + '-link> @' + tweet.user + '</a></button>: ' + tweet.message + '</p>')
           $tweet.appendTo($feed);
           index -= 1;
         }
-        $('')
+      }
+      $(document).ready(function(){
+        newTweets();
+        $('#newTweets').on('click', function() {
+          newTweets();
+        })
       });
     </script>
     <h1>Twittler</h1>
-    <button>FUCK IT</button>
+    <button id='newTweets'>GET NEW TWEETS</button>
     <div class="container">
     </div>
   </body>
