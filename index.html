@@ -35,8 +35,8 @@
         while(index >= 0){
 
           var tweet = streams.home[index];
-          var $tweet = $('<div class=' + tweet.user + '></div>');
-          $tweet.html('<p><button><a class=' + tweet.user + '-link> @' + tweet.user + '</a></button>: ' + tweet.message + ' -- ' + timeStamp() + '</p>')
+          var $tweet = $('<div class="' + tweet.user + ' tweets"></div>');
+          $tweet.html('<p><button class="filter"><a class=' + tweet.user + '-link> @' + tweet.user + '</a></button>: ' + tweet.message + ' -- ' + timeStamp() + '</p>')
           $tweet.appendTo($feed);
           index -= 1;
         }
