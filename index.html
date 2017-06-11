@@ -26,6 +26,21 @@
         }
       }
 
+      function filterButton () {
+        $('.shawndrost-link').on('click', function () {
+          filterTweets($('.sharksforcheap'), $('.mracus'), $('.douglascalhoun'));
+        })
+        $('.sharksforcheap-link').on('click', function() {
+          filterTweets($('.shawndrost'), $('.mracus'), $('.douglascalhoun'));
+        })
+        $('.mracus-link').on('click', function() {
+          filterTweets($('.shawndrost'), $('.sharksforcheap'), $('.douglascalhoun'));
+        })
+        $('.douglascalhoun-link').on('click', function() {
+          filterTweets($('.shawndrost'), $('.sharksforcheap'), $('.mracus'));
+        })
+      }
+
       function filterTweets (user1, user2, user3) {
         user1.remove();
         user2.remove();
@@ -35,19 +50,8 @@
           $('#newTweets').text('GET NEW TWEETS');
           $('.container').html('');
           newTweets();
-          $('.shawndrost-link').on('click', function () {
-            filterTweets($('.sharksforcheap'), $('.mracus'), $('.douglascalhoun'));
-            })
-          $('.sharksforcheap-link').on('click', function() {
-            filterTweets($('.shawndrost'), $('.mracus'), $('.douglascalhoun'));
-            })
-          $('.mracus-link').on('click', function() {
-            filterTweets($('.shawndrost'), $('.sharksforcheap'), $('.douglascalhoun'));
-            })
-          $('.douglascalhoun-link').on('click', function() {
-            filterTweets($('.shawndrost'), $('.sharksforcheap'), $('.mracus'));
-            })
-          });
+          filterButton();
+        });
       }
 
       $(document).ready(function(){
@@ -56,20 +60,10 @@
 
         $('#newTweets').on('click', function() {
           newTweets();
+          filterButton();
         })
 
-        $('.shawndrost-link').on('click', function () {
-          filterTweets($('.sharksforcheap'), $('.mracus'), $('.douglascalhoun'));
-          })
-        $('.sharksforcheap-link').on('click', function() {
-          filterTweets($('.shawndrost'), $('.mracus'), $('.douglascalhoun'));
-          })
-        $('.mracus-link').on('click', function() {
-          filterTweets($('.shawndrost'), $('.sharksforcheap'), $('.douglascalhoun'));
-          })
-        $('.douglascalhoun-link').on('click', function() {
-          filterTweets($('.shawndrost'), $('.sharksforcheap'), $('.mracus'));
-          })
+        filterButton();
 
       });
 
