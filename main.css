@@ -1,0 +1,43 @@
+body {
+    background-color: #f4f4f4;
+    color: #373737;
+    font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.tweets:nth-child(odd) {
+    background-color: #DDccc0;
+}
+
+tweets {
+    width: 400px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 100;
+  letter-spacing: .5px;
+  line-height: 44px;
+  padding: 40px 0 22px 0;
+  text-transform: uppercase;
+}
+
+.filter {
+    vertical-align: 2px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 960px;
+}
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#newTweets {
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: .5px;
+  margin: 0;
+  text-transform: uppercase;
+}
